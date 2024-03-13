@@ -12,16 +12,14 @@ app.get("/", function(req, res) {
 });
 
 //invoked after hitting go in the html form
-app.post("/", function(req, res) {
-    
-    // takes in the city name from the html form, display in console.//
-         const city = req.body.cityInput;
-    console.log(city);
+app.post("/", function (req, res) {
+// City ID
+const cityId = "2172797"; // 
     
     //build up the URL for the JSON query, API Key is // secret and needs to be obtained by signup 
         const units = "imperial";
-        const apiKey = "67f6b382921c1e89b39b20d4f9556f22";
-        const url = "https://api.openweathermap.org/data/2.5/weather?zip=" + city +  "&units=" + units + "&APPID=" + apiKey;
+        const apiKey = "873010304317811c87ca1b69b7854af9";
+        const url = "https://api.openweathermap.org/data/2.5/weather?id=" + cityId +  "&units=" + units + "&APPID=" + apiKey;
     
     // this gets the data from Open WeatherPI
     https.get(url, function(response){
